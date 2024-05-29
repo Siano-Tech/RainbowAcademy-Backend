@@ -1,19 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const config = require('config');
+const {email,email2,ccemail,bccemail,organisation} = require('../../config');
 const { check, validationResult } = require('express-validator');
-const normalize = require('normalize-url');
 
 const Contact = require('../../models/Contact');
 const generateId = require('../../utils/uuidGenerator');
 const EmailService = require('../../utils/emailService');
-
-const email = config.get('email');
-const email2 = config.get('email2');
-const ccemail = config.get('ccemail');
-const bccemail = config.get('bccemail');
-const organisation = config.get('organisation');
-
 
 // @route   GET api/contact/test
 // @desc    Tests contact route
